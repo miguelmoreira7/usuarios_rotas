@@ -1,0 +1,17 @@
+.menu {
+    background-color: rgb(31, 31, 31);
+}
+.mat-vermelho {
+    background-color: #FF0000;
+}
+.mat-sucesso {
+    background-color: #3abdc2 !important;
+}
+.botaoMenu {
+    background-color: cornflowerblue;
+    box-shadow: inset 0px 0px;
+    color: white !important;
+}
+.botaoMenu:focus {
+    box-shadow: inset 0px 0px !important;
+}

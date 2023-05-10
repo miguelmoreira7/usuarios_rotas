@@ -1,0 +1,21 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+    <mat-card class="card-cadastro">
+        <mat-card-content fxLayout="column" fxLayoutAlign="center center">
+            <mat-form-field appearance="fill">
+                <input matInput [(ngModel)]="usuarioDeManutencao.nome" placeholder="Digite o nome" required>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <input matInput *ngIf="usuarioDeManutencao.idade > 0" [(ngModel)]="usuarioDeManutencao.idade" placeholder="Digite a idade" required>
+                <input matInput *ngIf="usuarioDeManutencao.idade == 0" #idadeInput [(ngModel)]="usuarioDeManutencao.idadeInicial" placeholder="Digite a idade" required>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <input matInput [(ngModel)]="usuarioDeManutencao.cpf" placeholder="Digite o cpf" required>
+            </mat-form-field>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button color="primary" class="botoesCadastro" [routerLink]="['/listagemusuarios']">Cancelar</button>
+            <button *ngIf="this.nomeBotaoManutencao === 'Cadastrar'" [disabled]="!camposValidos()" mat-raised-button class="botoesCadastro" (click)="manter()">{{nomeBotaoManutencao}}</button>
+            <button *ngIf="this.nomeBotaoManutencao === 'Salvar' " mat-raised-button class="botoesCadastro" (click)="manter()">{{nomeBotaoManutencao}}</button>
+        </mat-card-actions>
+    </mat-card>
+</div>

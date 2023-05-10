@@ -1,0 +1,17 @@
+.card-cadastro {
+    align-items: center;
+    background-color:rgb(226, 226, 226);
+    width: 300px;
+    margin: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+.botoesCadastro {
+    color: white;
+    margin: 5px;
+    background-color: rgb(31, 31, 31);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: transform 0.6s ease-in-out;
+}
+.botoesCadastro:hover {
+    transform: scale(1.01);
+}
