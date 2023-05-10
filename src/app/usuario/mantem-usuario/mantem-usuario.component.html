@@ -6,7 +6,7 @@
             </mat-form-field>
             <mat-form-field appearance="fill">
                 <input matInput *ngIf="usuarioDeManutencao.idade > 0" [(ngModel)]="usuarioDeManutencao.idade" placeholder="Digite a idade" required>
-                <input matInput *ngIf="usuarioDeManutencao.idade == 0" #idadeInput [(ngModel)]="usuarioDeManutencao.idadeInicial" placeholder="Digite a idade" required>
+                <input matInput *ngIf="usuarioDeManutencao.idade == 0" [(ngModel)]="usuarioDeManutencao.idadeInicial" placeholder="Digite a idade" required>
             </mat-form-field>
             <mat-form-field appearance="fill">
                 <input matInput [(ngModel)]="usuarioDeManutencao.cpf" placeholder="Digite o cpf" required>

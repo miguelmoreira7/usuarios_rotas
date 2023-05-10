@@ -1,14 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatButtonModule } from '@angular/material/button';
-import { MatCardModule } from '@angular/material/card';
-import { MatInputModule } from '@angular/material/input';
-import { MatIconModule } from '@angular/material/icon';
-import { MatBadgeModule } from '@angular/material/badge';
-import { MatMenuModule } from '@angular/material/menu';
+import { ImportsModule } from 'src/app/imports/imports.module';
 
 import { RouterLink } from '@angular/router';
 import { MenuComponent } from './menu/menu.component';
@@ -19,15 +11,8 @@ import { MenuComponent } from './menu/menu.component';
   ],
   imports: [
     CommonModule,
-    BrowserAnimationsModule,
-    MatFormFieldModule,
-    MatButtonModule,
-    MatCardModule,
-    MatInputModule,
-    MatIconModule,
-    MatBadgeModule,
-    MatMenuModule,
-    RouterLink
+    RouterLink,
+    ImportsModule
   ],
   exports: [
     MenuComponent
