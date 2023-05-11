@@ -1,0 +1,16 @@
+.card-produto {
+    width: 400px;
+    height: 400px;
+    max-width: 400px;
+    max-height: 400px;
+  }
+  
+.card-produto img {
+  max-width: 250px;
+  max-height: 250px;
+  object-fit: contain;
+}
+.botoes {
+  display: flex;
+  justify-content: flex-end;
+}

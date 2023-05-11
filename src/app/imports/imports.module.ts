@@ -11,6 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatMenuModule } from '@angular/material/menu';
 import { FlexModule } from '@angular/flex-layout';
+import { PipesModule } from '../pipes/pipes.module';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { FlexModule } from '@angular/flex-layout';
     MatIconModule,
     MatBadgeModule,
     MatMenuModule,
-    FlexModule
+    FlexModule,
+    PipesModule,
   ],
   exports: [
     BrowserAnimationsModule,
@@ -38,7 +40,8 @@ import { FlexModule } from '@angular/flex-layout';
     MatIconModule,
     MatBadgeModule,
     MatMenuModule,
-    FlexModule
+    FlexModule,
+    PipesModule
   ]
 })
 export class ImportsModule { }

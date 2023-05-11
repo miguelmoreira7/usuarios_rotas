@@ -1,0 +1,15 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+    <mat-card class="card-insercao">
+        <mat-card-content fxLayout="column" fxLayoutAlign="center center">
+            <mat-form-field appearance="fill">
+                <input matInput [(ngModel)]="produtoManutencao.nomeProduto" placeholder="Digite o nome do produto" required>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <input matInput [(ngModel)]="produtoManutencao.preco" placeholder="Digite o preço do produto" required>
+            </mat-form-field>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button color="primary" class="botaoSalvar" [routerLink]="['/listagemprodutos']">Salvar</button>
+        </mat-card-actions>
+    </mat-card>
+</div>
