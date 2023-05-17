@@ -15,7 +15,7 @@
         <mat-card-actions>
             <button mat-raised-button color="primary" class="botoesCadastro" [routerLink]="['/listagemusuarios']">Cancelar</button>
             <button *ngIf="this.nomeBotaoManutencao === 'Cadastrar'" [disabled]="!camposValidos()" mat-raised-button class="botoesCadastro" (click)="manter()">{{nomeBotaoManutencao}}</button>
-            <button *ngIf="this.nomeBotaoManutencao === 'Salvar' " mat-raised-button class="botoesCadastro" (click)="manter()">{{nomeBotaoManutencao}}</button>
+            <button *ngIf="this.nomeBotaoManutencao === 'Salvar' " mat-raised-button class="botoesCadastro" (click)="atualizar()">{{nomeBotaoManutencao}}</button>
         </mat-card-actions>
     </mat-card>
 </div>

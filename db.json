@@ -1,0 +1,32 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "nome": "Hugo",
+      "idade": 22,
+      "cpf": "12312312312",
+      "idadeInicial": ""
+    },
+    {
+      "id": 2,
+      "nome": "Cesar",
+      "idade": 23,
+      "cpf": "23423423434",
+      "idadeInicial": ""
+    },
+    {
+      "id": 3,
+      "nome": "Lima",
+      "idade": 24,
+      "cpf": "34534534545",
+      "idadeInicial": ""
+    },
+    {
+      "id": 4,
+      "nome": "Fonseca",
+      "idade": 25,
+      "cpf": "45645645656",
+      "idadeInicial": ""
+    }
+  ]
+}

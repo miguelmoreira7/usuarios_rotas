@@ -1,8 +1,8 @@
 import { Produto } from "./produto ";
 
 export class Usuario {
-    produtos: Array<Produto> = [];
     public idadeInicial = ''
+    public id = 0
     constructor(public nome: string, public idade: number, public cpf: string) {
         this.idade = idade;
     }

@@ -1,6 +1,6 @@
+import { UsuarioService } from './../../shared/services/usuario.service';
 import { Component } from '@angular/core';
 import { Usuario } from 'src/app/shared/model/usuario';
-import { USUARIOS } from 'src/app/shared/model/usuarios';
 
 @Component({
   selector: 'app-listagem-usuarios',
@@ -9,9 +9,17 @@ import { USUARIOS } from 'src/app/shared/model/usuarios';
 })
 
 export class ListagemUsuariosComponent {
-  usuarios = USUARIOS;
+  usuarios: Usuario[] = [];
+
+  constructor (private usuarioService: UsuarioService) {
+    this.usuarioService.listar().subscribe(
+      usuarios => this.usuarios = usuarios
+    )
+  }
+
   excluir (usuarioARemover: Usuario):void {
-    const indx = this.usuarios.findIndex(usuario => usuario.cpf === usuarioARemover.cpf);
+    this.usuarioService.remover(usuarioARemover.id).subscribe();
+    const indx = this.usuarios.findIndex(usuario => usuario.id === usuarioARemover.id);
     this.usuarios.splice(indx, 1);
   }
 }

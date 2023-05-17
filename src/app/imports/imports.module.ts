@@ -12,6 +12,7 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { MatMenuModule } from '@angular/material/menu';
 import { FlexModule } from '@angular/flex-layout';
 import { PipesModule } from '../pipes/pipes.module';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { PipesModule } from '../pipes/pipes.module';
     MatMenuModule,
     FlexModule,
     PipesModule,
+    HttpClientModule,
   ],
   exports: [
     BrowserAnimationsModule,
@@ -41,7 +43,8 @@ import { PipesModule } from '../pipes/pipes.module';
     MatBadgeModule,
     MatMenuModule,
     FlexModule,
-    PipesModule
+    PipesModule,
+    HttpClientModule
   ]
 })
 export class ImportsModule { }

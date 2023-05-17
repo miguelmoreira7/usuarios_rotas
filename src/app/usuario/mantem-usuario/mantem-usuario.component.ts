@@ -1,7 +1,8 @@
+import { HttpClient } from '@angular/common/http';
+import { UsuarioService } from './../../shared/services/usuario.service';
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Usuario } from 'src/app/shared/model/usuario';
-import { USUARIOS } from 'src/app/shared/model/usuarios';
 
 @Component({
   selector: 'app-mantem-usuario',
@@ -13,32 +14,38 @@ export class MantemUsuarioComponent {
   usuarioDeManutencao: Usuario;
   estaCadastrando = true;
   nomeBotaoManutencao!: String;
+  url_usuarios = 'http://localhost:3000/usuarios'
 
-  usuarios = USUARIOS;
-  constructor (private rotaAtual: ActivatedRoute, private roteador: Router) {
+  usuarios: Usuario[] = [];
+  constructor (private usuarioService: UsuarioService ,private rotaAtual: ActivatedRoute, private roteador: Router) {
+    usuarioService.listar().subscribe(
+      usuarios => this.usuarios = usuarios
+    )
     this.usuarioDeManutencao = new Usuario('',0,'');
     const idParaEdicao = this.rotaAtual.snapshot.paramMap.get('id');
     if (idParaEdicao) {
-      const usuarioEcontrado = this.usuarios.find(usuario => usuario.cpf === idParaEdicao);
-      if (usuarioEcontrado) {
-        this.estaCadastrando = false;
-        this.nomeBotaoManutencao = 'Salvar';
-        this.usuarioDeManutencao = usuarioEcontrado;
-      }
+      this.usuarioService.buscarPorId(Number(idParaEdicao)).subscribe(usuario => this.usuarioDeManutencao = usuario);
+      this.estaCadastrando = false;
+      this.nomeBotaoManutencao = 'Salvar';
     }
     else {
       this.nomeBotaoManutencao = 'Cadastrar';
     }
   }
+  atualizar() {
+    this.usuarioService.editar(this.usuarioDeManutencao).subscribe();
+    console.log(this.usuarioDeManutencao);
+    this.roteador.navigate(['listagemusuarios']);
+  }
 
   manter(): void {
     if (this.estaCadastrando && this.usuarioDeManutencao) {
       this.usuarioDeManutencao.idade = Number(this.usuarioDeManutencao.idadeInicial)
-      this.usuarios.push(this.usuarioDeManutencao);
+      this.usuarioService.inserir(this.usuarioDeManutencao).subscribe();
     }
     this.usuarioDeManutencao = new Usuario('',0,'');
     this.nomeBotaoManutencao = 'Cadastrar';
-    this.roteador.navigate(['listagemusuarios'])
+    this.roteador.navigate(['listagemusuarios']);
   }
   camposValidos() {
     return this.usuarioDeManutencao.nome && this.usuarioDeManutencao.idadeInicial &&

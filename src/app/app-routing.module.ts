@@ -19,6 +19,10 @@ const routes: Routes = [
     component: ListagemUsuariosComponent
   },
   {
+    path: 'listagemusuarios/:cpf',
+    component: ListagemUsuariosComponent
+  },
+  {
     path: 'listagemprodutos',
     component: ListagemProdutosComponent
   },

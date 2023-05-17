@@ -23,7 +23,7 @@ import { ImportsModule } from './imports/imports.module';
     LayoutModule,
     UsuarioModule,
     PipesModule,
-    ProdutoModule
+    ProdutoModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
